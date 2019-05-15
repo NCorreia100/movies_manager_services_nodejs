@@ -1,8 +1,31 @@
 body {
+  border-left: auto;
+  border-right:auto;
+  text-align: center;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.movieDiv{
+  display: inline-block;  
+  position: relative;
+  float: none;
+  border: 5px solid brown;
+  border-radius: 15%; 
+  max-width: 200pt;  
+}
+
+.movieListing{
+ text-align: center;
+}
+
+.rentedMovies{
+  display: inline-block;  
+  position: relative;
+  border: 5px solid cyan;
+  border-radius: 25%;
 }

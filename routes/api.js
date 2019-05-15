@@ -35,6 +35,13 @@ Router.post ('/movies', function(req, res, next) {
     }));
 });
 
+Router.delete('/movies',(req,res,next)=>{
+res.send(Movies.remove(
+
+    
+))
+
+})
 // function to load new movies.
 loadNewMovies = function() {
     Movies.insert(loadMovies);

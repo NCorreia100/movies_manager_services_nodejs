@@ -1,0 +1,25 @@
+## MAC files ##
+.DS_Store
+
+#external modules
+node_modules/
+
+#logs & docs
+npm-debug.log
+newrelic_agent.log
+
+# Compiled Dirs
+bundle.js
+bundle-server.js
+
+# API Keys
+config.js
+
+# Docker
+.dockerignore
+
+# newrelic
+newrelic.js
+
+# Artillery
+artillery.yaml
