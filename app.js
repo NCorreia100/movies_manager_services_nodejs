@@ -3,10 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const mongoose = require('mongoose');
 const api = require('./routes/api');
 
 var app = express();
+
+var cors = require('cors');
+app.use(cors()); // Use this after the variable declaration
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -17,11 +19,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-mongoose.connect("mongodb://localhost:27017/moviesDB", {useNewUrlParser: true});
-mongoose.connection.on('error', function(err){
-  console.log('Error connecting to the mongo db server: ' + err);
-});
 
 app.use('/api', api);
 
@@ -42,5 +39,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-// app.listen(3000,()=>console.log("server listening on port 3000"))
-module.exports = app;
+app.listen(3000,()=>console.log('server listening on port 3000'))
+
+
+
